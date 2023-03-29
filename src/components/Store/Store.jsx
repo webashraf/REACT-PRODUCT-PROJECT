@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Store.css";
-
-import { Tooltip } from "react-tooltip";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Store = () => {
   const [product, setProduct] = useState([]);
@@ -21,11 +20,9 @@ const Store = () => {
       const newCart = [...cart, product];
       setCart(newCart);
     } else {
-      console.log("value is falsey");
-      //   alert("You add only one products");
-      <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!">
-        ◕‿‿◕
-      </a>;
+      toast.warning('You can  add only one product', {
+        position: toast.POSITION.TOP_RIGHT
+    });
     }
   };
 

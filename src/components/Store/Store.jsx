@@ -3,6 +3,8 @@ import Product from "../Product/Product";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Store.css";
 
+import { Tooltip } from "react-tooltip";
+
 const Store = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -13,8 +15,18 @@ const Store = () => {
 
   const [cart, setCart] = useState([]);
   const handleBtn = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
+    const findValue = cart.find((value) => value === product);
+    // console.log(findValue);
+    if (!findValue) {
+      const newCart = [...cart, product];
+      setCart(newCart);
+    } else {
+      console.log("value is falsey");
+      //   alert("You add only one products");
+      <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!">
+        ◕‿‿◕
+      </a>;
+    }
   };
 
   return (

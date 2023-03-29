@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sidebar = (props) => {
-  console.log(props.product);
+  //   console.log(props.product);
   const { id, image, description, rating, price, title } = props.product;
 
   return (
